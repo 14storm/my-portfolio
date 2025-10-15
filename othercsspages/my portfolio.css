@@ -130,12 +130,56 @@ section {
 }
 
 
+/* Download CV Button Styles */
+.sidebar .cv {
+      width: 100%;
+      /* Ensure the container takes full width of the sidebar */
+      padding: 0 20px;
+      /* Add padding to contain the button nicely */
+      box-sizing: border-box;
+}
+
 .sidebar .cv a {
+      display: block;
+      /* Make the link a block element to use 100% width */
+      width: 100%;
+      /* Use 100% width of its parent (.cv) */
+      text-align: center;
+      /* Center the text inside the button */
+
       background-color: #1ED760;
-      padding: 15px 85px;
+      padding: 15px 0;
+      /* Use vertical padding, let width handle horizontal size */
       border-radius: 10px;
       color: #1D1D1D;
       font-size: 14px;
+      transition: all 0.3s ease-in;
+}
+/* --- MEDIA QUERY FIXES for Sidebar (Less than 1000px wide) --- */
+@media (max-width: 1000px) {
+      .sidebar {
+            /* ... other styles ... */
+            padding: 40px 10px;
+            /* Reduced overall sidebar padding from 15px to 10px */
+      }
+
+      .sidebar .cv {
+            padding: 0;
+            /* Remove horizontal padding entirely for max button width */
+      }
+
+      .sidebar .cv a {
+            /* The button itself will use its 15px top/bottom padding */
+            padding: 15px 0;
+            font-size: 14px;
+            /* Ensure font size is not too large */
+      }
+}
+
+.sidebar .cv a:hover {
+      background-color: transparent;
+      border: 2px solid #1ED760;
+      color: white;
 }
 
 .sidebar .cv a:hover {
@@ -787,9 +831,9 @@ section {
             text-align: left;
       }
 
-      .sidebar .cv a {
+      /* .sidebar .cv a {
             padding: 15px 100px;
-      }
+      } */
 
       .main {
             margin: auto;
