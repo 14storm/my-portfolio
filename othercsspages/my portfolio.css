@@ -291,113 +291,127 @@ section {
 
 /* ============ SECTION 3 - PORTFOLIO STYLES ============ */
 
+/* ============ SECTION 3 - PORTFOLIO STYLES (UPDATED) ============ */
+
 .sect-3 {
       margin-top: 5em;
       padding: 0 10px;
       margin-bottom: 8em;
-
-}
-
-.portfolio {
-      margin-bottom: thin solid #BBBAA6;
+      /* Animation settings (copied from original CSS) */
+      animation-name: fadeInSlideUp;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      opacity: 0;
+      animation-delay: 1.7s;
 }
 
 .portfolio h3 {
       color: #BBBAA6;
       font-size: 30px;
+      /* Consistent heading size */
       font-weight: 500;
       margin-bottom: 1.5em;
       border-bottom: thin solid #5b5b5b6c;
-
-
+      /* Separator line */
+      padding-left: 10px;
+      /* Align with main content */
 }
 
 .projects {
-
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1em;
+      gap: 20px;
+      width: 100%;
+      margin: auto;
+}
+
+.mock-cont {
+      overflow: hidden;
+      border-radius: 10px;
+      background-color: #0E0F0F;
+      /* Dark background for the card */
+      padding: 10px;
 }
 
 
+.image {
+      overflow: hidden;
+      border-radius: 10px;
+}
+
 .mockup {
-      width: 98%;
+      width: 100%;
       height: 300px;
       border-radius: 10px;
       object-fit: cover;
       transition: transform 0.5s ease;
-
-
 }
 
-
 .mockup:hover {
-      background-color: #0b6f2e;
       transform: scale(1.1);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-
 }
 
 .mockup-description {
-      margin-bottom: 2em;
-      margin-top: 2em;
+      margin-top: 15px;
+      padding: 0 5px;
 }
 
 .mockup-description a {
       color: #BBBAA6;
       font-size: 18px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
 }
 
+.mockup-description a i {
+      font-size: 14px;
+      margin-left: 8px;
+      transition: transform 0.3s ease;
+}
 
+.mockup-description a:hover i {
+      transform: translateX(5px);
+}
 
+/* --- RESPONSIVENESS (MEDIA QUERIES) --- */
 
-@media (max-width: 767px) {
+@media (max-width: 1000px) {
       .projects {
-            width: 80%;
-            margin: auto;
-      }
-
-      .mockup {
-            object-fit: cover;
+            width: 100%;
+            padding: 0 10px;
       }
 }
-
-
-
-/* --- RESPONSIVENESS FOR MOBILE --- */
 
 @media (max-width: 767px) {
       .sect-3 {
-            width: 100%;
-            margin: auto;
-      }
-
-
-      .projects {
-            grid-template-columns: 1fr;
-            gap: 20px;
-            padding: 8px;
-            width: 95%;
-            margin: auto;
-
+            padding: 0 1.5em;
       }
 
       .portfolio h3 {
             font-size: 24px;
-            margin-bottom: 1em;
-            text-align: start;
-            padding-left: 1.5em;
+            padding-left: 0;
+      }
+
+      .projects {
+            grid-template-columns: 1fr;
+            gap: 30px;
+            width: 100%;
+            margin: auto;
+            padding: 0;
+      }
+
+      .mockup {
+            height: 250px;
       }
 }
-
 
 /* ============ SECTION 4 - SERVICES STYLES (ENHANCED) ============ */
 
 .sect-4 {
       margin-top: 5em;
-      /* Added margin for better spacing */
       margin-bottom: 8em;
-      /* Added margin for better spacing */
 }
 
 .sect-4 h3 {
@@ -406,33 +420,26 @@ section {
       margin-bottom: 1.5em;
       border-bottom: thin solid #5b5b5b98;
       font-size: 30px;
-      /* Increased font size for consistency */
       text-align: start;
       padding-left: 10px;
-      /* Removed extra left padding */
 }
 
 .skills {
-      width: 90%;
-      /* Increased width slightly for better content fit */
+      width: 95%;
       margin: auto;
       display: grid;
       gap: 20px;
-      /* Increased gap */
       grid-template-columns: repeat(2, 1fr);
 }
 
 .skills-container {
       background-color: #0E0F0F;
       border-radius: 15px;
-      /* Increased border radius */
       border: thin solid #bbbaa697;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      /* Nicer box shadow */
       padding: 30px;
       transition: transform 0.3s ease, border-color 0.3s ease;
       min-height: 250px;
-      /* Minimum height for better structure */
       display: flex;
       flex-direction: column;
 }
@@ -443,7 +450,7 @@ section {
       /* Subtle lift effect */
       border-color: #1ED760;
       /* Highlight border with accent color */
-      box-shadow: 0 8px 16px rgba(30, 215, 96, 0.2);
+      box-shadow: 0 2px 2px rgba(30, 215, 96, 0.2);
       /* Glowing effect */
 }
 
@@ -600,12 +607,12 @@ section {
 }
 
 .skill-item:nth-child(3) .skill-bar {
-      width: 70% !important;
+      width: 1% !important;
       animation-delay: 0.3s;
 }
 
 .skill-item:nth-child(4) .skill-bar {
-      width: 60% !important;
+      width: 1% !important;
       animation-delay: 0.4s;
 }
 
@@ -615,7 +622,7 @@ section {
             width: 0;
       }
 
-      /* The final width is dynamically set by the inline style in HTML */
+
 }
 
 
@@ -652,7 +659,6 @@ section {
       margin-top: 5em;
       padding: 0 10px;
       margin-bottom: 10em;
-      /* Animation settings (adjust delay as needed) */
       animation-name: fadeInSlideUp;
       animation-duration: 0.8s;
       animation-timing-function: ease-out;
@@ -693,7 +699,6 @@ section {
 .contact-form input[type="email"]:focus,
 .contact-form textarea:focus {
       border-color: #1ED760;
-      /* Your accent color */
       outline: none;
 }
 
@@ -703,7 +708,6 @@ section {
 
 .contact-form .send-message-btn {
       align-self: flex-start;
-      /* Keeps the button to the left on wider screens */
       background-color: #1ED760;
       padding: 15px 30px;
       border: none;
@@ -724,6 +728,8 @@ section {
 .contact-form .send-message-btn i {
       margin-left: 8px;
 }
+
+
 
 /* Responsive adjustments for contact section */
 @media (max-width: 767px) {
@@ -747,54 +753,6 @@ section {
             align-self: unset;
       }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
