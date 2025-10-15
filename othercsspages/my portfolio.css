@@ -310,14 +310,11 @@ section {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1em;
-      /* margin-bottom: 8em; */
-      /* max-width: 1200px; */
-
 }
 
 
 .mockup {
-      width: 100%;
+      width: 98%;
       height: 300px;
       border-radius: 10px;
       object-fit: cover;
@@ -341,9 +338,11 @@ section {
 
 .mockup-description a {
       color: #BBBAA6;
-      font-size: 24px;
-      /* border: 2px solid red; */
+      font-size: 18px;
 }
+
+
+
 
 @media (max-width: 767px) {
       .projects {
@@ -366,11 +365,12 @@ section {
             margin: auto;
       }
 
+
       .projects {
             grid-template-columns: 1fr;
             gap: 20px;
-            padding: 0;
-            width: 80%;
+            padding: 8px;
+            width: 95%;
             margin: auto;
 
       }
@@ -379,6 +379,7 @@ section {
             font-size: 24px;
             margin-bottom: 1em;
             text-align: start;
+            padding-left: 1.5em;
       }
 }
 
@@ -388,14 +389,16 @@ section {
 /* ===========SECT-FOUR======= */
 .sect-4 h3 {
       color: #BBBAA6;
-      font-size: 30px;
       font-weight: 500;
       margin-bottom: 1.5em;
       border-bottom: thin solid #5b5b5b98;
+      font-size: 24px;
+      text-align: start;
+      padding-left: 1.5em;
 }
 
 .skills {
-      width: 60%;
+      width: 70%;
       display: grid;
       gap: 1em;
       grid-template-columns: repeat(2, 1fr);
@@ -410,17 +413,27 @@ section {
       height: 350px;
 }
 
+@media (max-width: 884px) {
+      .skills {
+            width: 90%;
+            margin: auto;
+      }
+
+      .skills-container {
+            width: 400px;
+      }
+}
 
 @media (max-width: 767px) {
       .skills {
             display: flex;
             flex-direction: column;
-            width: 80%;
+            width: 90%;
             margin: auto;
       }
 
       .skills-container {
-            width: 100%;
+            width: 90%;
             margin: auto;
             height: 200px;
       }
@@ -610,6 +623,10 @@ section {
             padding: 40px 15px;
       }
 
+      .hero-sect {
+            margin-top: 2em;
+      }
+
       .sidebar .cv a {
             padding: 15px 60px;
             border-radius: 10px;
@@ -641,11 +658,14 @@ section {
 
 @media(max-width: 767px) {
       .sidebar {
-            width: 100%;
+            width: 90%;
             margin: auto;
-            /* left: 10px; */
             gap: 2em;
             top: .5em;
+      }
+
+      .sect-2 {
+            margin-bottom: 4em;
       }
 
       .sidebar .cv a {
@@ -659,7 +679,7 @@ section {
       }
 
       .hero-text h3 {
-            font-size: 20px;
+            font-size: 24px;
       }
 
       .hero-text p {
