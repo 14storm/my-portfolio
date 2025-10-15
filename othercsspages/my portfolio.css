@@ -14,20 +14,6 @@ body {
       overflow-x: hidden;
 }
 
-/* .circle {
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: rgba(30, 215, 96, 0.3);
-      transition: top 0.4s ease-out, left 0.4s ease-out;
-      visibility: visible;
-      z-index: 1;
-      pointer-events: none;
-} */
-
-
-
 .social .fa-brands:hover .circle {
       width: 60px;
       height: 60px;
@@ -351,7 +337,6 @@ section {
 .mockup-description {
       margin-bottom: 2em;
       margin-top: 2em;
-      /* border: 2px solid green; */
 }
 
 .mockup-description a {
