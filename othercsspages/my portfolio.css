@@ -160,6 +160,8 @@ section {
 .menulist {
       z-index: 3;
       top: 6em;
+      display: flex;
+      align-items: center;
       position: fixed;
 }
 
@@ -190,6 +192,11 @@ section {
       color: #1ED760;
       background-color: #0F1010;
       transition: all 0.1s ease-in;
+}
+
+.fa-bars-staggered {
+      color: white;
+      font-size: 24px;
 }
 
 
@@ -384,64 +391,362 @@ section {
 }
 
 
+/* ============ SECTION 4 - SERVICES STYLES (ENHANCED) ============ */
 
+.sect-4 {
+      margin-top: 5em;
+      /* Added margin for better spacing */
+      margin-bottom: 8em;
+      /* Added margin for better spacing */
+}
 
-/* ===========SECT-FOUR======= */
 .sect-4 h3 {
       color: #BBBAA6;
       font-weight: 500;
       margin-bottom: 1.5em;
       border-bottom: thin solid #5b5b5b98;
-      font-size: 24px;
+      font-size: 30px;
+      /* Increased font size for consistency */
       text-align: start;
-      padding-left: 1.5em;
+      padding-left: 10px;
+      /* Removed extra left padding */
 }
 
 .skills {
-      width: 70%;
+      width: 90%;
+      /* Increased width slightly for better content fit */
+      margin: auto;
       display: grid;
-      gap: 1em;
+      gap: 20px;
+      /* Increased gap */
       grid-template-columns: repeat(2, 1fr);
 }
 
 .skills-container {
       background-color: #0E0F0F;
-      border-radius: 10px;
+      border-radius: 15px;
+      /* Increased border radius */
       border: thin solid #bbbaa697;
-      box-shadow: 2px 2px 2px #242524;
-      width: 470px;
-      height: 350px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      /* Nicer box shadow */
+      padding: 30px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      min-height: 250px;
+      /* Minimum height for better structure */
+      display: flex;
+      flex-direction: column;
+}
+
+/* Hover effect to make the card stand out */
+.skills-container:hover {
+      transform: translateY(-8px);
+      /* Subtle lift effect */
+      border-color: #1ED760;
+      /* Highlight border with accent color */
+      box-shadow: 0 8px 16px rgba(30, 215, 96, 0.2);
+      /* Glowing effect */
+}
+
+
+.skills-container .details {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+}
+
+.skills-container .details i {
+      font-size: 28px;
+      color: #1ED760;
+      /* Icon color */
+}
+
+.skills-container .details h5 {
+      font-size: 20px;
+      font-weight: 600;
+      color: white;
+}
+
+.skills-container .skills-content p {
+      color: #BBBAA6;
+      /* Text color */
+      font-size: 16px;
+      line-height: 1.6;
+}
+
+
+/* --- RESPONSIVENESS (MEDIA QUERIES) --- */
+
+@media (max-width: 1000px) {
+      .skills {
+            width: 100%;
+      }
 }
 
 @media (max-width: 884px) {
       .skills {
+            grid-template-columns: repeat(2, 1fr);
             width: 90%;
             margin: auto;
       }
 
       .skills-container {
-            width: 400px;
+            /* Adjusted width and height can be removed since we use padding/min-height */
+            width: auto;
+            min-height: 220px;
       }
 }
 
 @media (max-width: 767px) {
+      .sect-4 {
+            padding: 0 1.5em;
+            /* Add padding to the section itself for mobile */
+      }
+
+      .sect-4 h3 {
+            font-size: 24px;
+            padding-left: 0;
+            /* Align header */
+            border-bottom: thin solid #5b5b5b98;
+      }
+
       .skills {
             display: flex;
             flex-direction: column;
-            width: 90%;
+            width: 100%;
             margin: auto;
+            gap: 20px;
       }
 
       .skills-container {
-            width: 90%;
-            margin: auto;
-            height: 200px;
+            width: 100%;
+            padding: 20px;
+            min-height: auto;
       }
-
 }
 
 
 
+/* ============ SECTION 5 - TECHNICAL SKILLS STYLES ============ */
+
+.skills-section {
+      margin-top: 5em;
+      padding: 0 10px;
+      margin-bottom: 8em;
+      /* Animation settings (adjust delay as needed) */
+      animation-name: fadeInSlideUp;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      opacity: 0;
+      animation-delay: 2.3s;
+}
+
+.skills-header h3 {
+      color: #BBBAA6;
+      font-size: 30px;
+      font-weight: 500;
+      margin-bottom: 1.5em;
+      border-bottom: thin solid #5b5b5b6c;
+}
+
+.skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      width: 90%;
+}
+
+.skill-item {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+}
+
+.skill-name {
+      color: #BBBAA6;
+      font-size: 18px;
+      font-weight: 500;
+}
+
+.skill-bar-container {
+      background-color: #333;
+      border-radius: 10px;
+      height: 15px;
+      overflow: hidden;
+      position: relative;
+}
+
+.skill-bar {
+      height: 100%;
+      background-color: #1ED760;
+      /* Your primary accent color */
+      border-radius: 10px 0 0 10px;
+      transition: width 1s ease-in-out;
+      /* Adding an initial state for animation */
+      animation: fillSkillBar 1.5s ease-out forwards;
+      width: 0 !important;
+}
+
+/* Set the final width for the animation */
+.skill-item:nth-child(1) .skill-bar {
+      width: 95% !important;
+      animation-delay: 0.1s;
+}
+
+.skill-item:nth-child(2) .skill-bar {
+      width: 85% !important;
+      animation-delay: 0.2s;
+}
+
+.skill-item:nth-child(3) .skill-bar {
+      width: 70% !important;
+      animation-delay: 0.3s;
+}
+
+.skill-item:nth-child(4) .skill-bar {
+      width: 60% !important;
+      animation-delay: 0.4s;
+}
+
+
+@keyframes fillSkillBar {
+      0% {
+            width: 0;
+      }
+
+      /* The final width is dynamically set by the inline style in HTML */
+}
+
+
+.skill-percentage {
+      color: #1ED760;
+      font-size: 16px;
+      text-align: right;
+      font-weight: bold;
+}
+
+/* Responsive adjustments for skills section */
+@media (max-width: 767px) {
+      .skills-section {
+            padding: 0 1.5em;
+      }
+
+      .skills-header h3 {
+            font-size: 24px;
+            text-align: start;
+      }
+
+      .skills-grid {
+            grid-template-columns: 1fr;
+            width: 100%;
+            padding: 0 10px;
+      }
+}
+
+
+
+/* ============ SECTION 6 - CONTACT FORM STYLES ============ */
+
+.contact-section {
+      margin-top: 5em;
+      padding: 0 10px;
+      margin-bottom: 10em;
+      /* Animation settings (adjust delay as needed) */
+      animation-name: fadeInSlideUp;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      opacity: 0;
+      animation-delay: 2.6s;
+}
+
+.contact-header h3 {
+      color: #BBBAA6;
+      font-size: 30px;
+      font-weight: 500;
+      margin-bottom: 1.5em;
+      border-bottom: thin solid #5b5b5b6c;
+}
+
+.contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 90%;
+      padding: 0 10px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+      padding: 15px;
+      border: 1px solid #5b5b5b6c;
+      border-radius: 10px;
+      background-color: #0E0F0F;
+      color: #BBBAA6;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+      border-color: #1ED760;
+      /* Your accent color */
+      outline: none;
+}
+
+.contact-form textarea {
+      resize: vertical;
+}
+
+.contact-form .send-message-btn {
+      align-self: flex-start;
+      /* Keeps the button to the left on wider screens */
+      background-color: #1ED760;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      color: #1D1D1D;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-form .send-message-btn:hover {
+      background-color: transparent;
+      border: 2px solid #1ED760;
+      color: white;
+}
+
+.contact-form .send-message-btn i {
+      margin-left: 8px;
+}
+
+/* Responsive adjustments for contact section */
+@media (max-width: 767px) {
+      .contact-section {
+            padding: 0 1.5em;
+      }
+
+      .contact-header h3 {
+            font-size: 24px;
+            text-align: start;
+      }
+
+      .contact-form {
+            width: 100%;
+            padding: 0 10px;
+      }
+
+      .contact-form .send-message-btn {
+            width: 100%;
+            text-align: center;
+            align-self: unset;
+      }
+}
 
 
 
@@ -534,7 +839,7 @@ section {
       }
 
       .menulist {
-            display: none;
+            /* display: none; */
             border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 15px;
             padding: 10px 15px;
