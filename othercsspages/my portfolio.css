@@ -158,21 +158,16 @@ section {
 /* --- MEDIA QUERY FIXES for Sidebar (Less than 1000px wide) --- */
 @media (max-width: 1000px) {
       .sidebar {
-            /* ... other styles ... */
             padding: 40px 10px;
-            /* Reduced overall sidebar padding from 15px to 10px */
       }
 
       .sidebar .cv {
             padding: 0;
-            /* Remove horizontal padding entirely for max button width */
       }
 
       .sidebar .cv a {
-            /* The button itself will use its 15px top/bottom padding */
             padding: 15px 0;
             font-size: 14px;
-            /* Ensure font size is not too large */
       }
 }
 
