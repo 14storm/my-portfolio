@@ -13,6 +13,9 @@ body {
       background-color: #0F1010;
       overflow-x: hidden;
 }
+section{
+      overflow: hidden;
+}
 
 .social .fa-brands:hover .circle {
       width: 60px;
@@ -51,6 +54,7 @@ section {
       display: flex;
       gap: 8em;
       margin-top: 6em;
+      overflow: hidden;
 }
 
 .sidebar {
@@ -155,6 +159,7 @@ section {
       font-size: 14px;
       transition: all 0.3s ease-in;
 }
+
 /* --- MEDIA QUERY FIXES for Sidebar (Less than 1000px wide) --- */
 @media (max-width: 1000px) {
       .sidebar {
@@ -415,6 +420,11 @@ section {
 }
 
 /* --- RESPONSIVENESS (MEDIA QUERIES) --- */
+@media (max-width:1280px) {
+      .projects {
+            width: 90%;
+      }
+}
 
 @media (max-width: 1000px) {
       .projects {
@@ -522,6 +532,11 @@ section {
 
 
 /* --- RESPONSIVENESS (MEDIA QUERIES) --- */
+@media (max-width:1280px) {
+      .skills {
+            width: 90%;
+      }
+}
 
 @media (max-width: 1000px) {
       .skills {
@@ -584,6 +599,8 @@ section {
       animation-duration: 0.8s;
       animation-timing-function: ease-out;
       animation-fill-mode: forwards;
+      width: 95%;
+      margin: auto;
       opacity: 0;
       animation-delay: 2.3s;
 }
@@ -695,6 +712,8 @@ section {
 /* ============ SECTION 6 - CONTACT FORM STYLES ============ */
 
 .contact-section {
+      width: 95%;
+      margin: auto;
       margin-top: 5em;
       padding: 0 10px;
       margin-bottom: 10em;
