@@ -11,10 +11,10 @@
 
 body {
       background-color: #0F1010;
-      overflow-x: hidden;
+      /* overflow-x: hidden; */
 }
 section{
-      overflow: hidden;
+      /* overflow: hidden; */
 }
 
 .social .fa-brands:hover .circle {
@@ -54,7 +54,7 @@ section {
       display: flex;
       gap: 8em;
       margin-top: 6em;
-      overflow: hidden;
+      /* overflow-x: hidden; */
 }
 
 .sidebar {
@@ -161,7 +161,7 @@ section {
 }
 
 /* --- MEDIA QUERY FIXES for Sidebar (Less than 1000px wide) --- */
-@media (max-width: 1000px) {
+@media (max-width: 960px) {
       .sidebar {
             padding: 40px 10px;
       }
@@ -208,6 +208,8 @@ section {
       align-items: center;
       position: fixed;
 }
+
+
 
 .menulist ul {
       display: flex;
